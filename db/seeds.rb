@@ -11,7 +11,7 @@ require 'faker'
 puts 'Creating 10 fake restaurants...'
 10.times do
   restaurant = Restaurant.new(
-    name:    Faker::Company.name,
+    name:    Faker::Food.spice,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     phone_number: Faker::PhoneNumber.phone_number,
     category:  ["chinese", "italian", "japanese", "french", "belgian"].sample

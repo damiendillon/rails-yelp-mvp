@@ -1,0 +1,33 @@
+
+<div id="wrapper">
+  <h1>
+<%= @restaurant.name %> <br>
+</h1>
+<p>
+<%= @restaurant.address %> <br>
+<%= @restaurant.category.capitalize %> <br>
+<%= @restaurant.phone_number %> <br>
+<br>
+<div id="review_box">
+  <h3>Reviews</h3>
+<% @restaurant.reviews.each do |r| %> <br>
+<%= r.content %> <br>
+<%= r.rating %> <br>
+<% end %>
+</div>
+<br>
+<br>
+<%= link_to "Back to all restaurants", root_path %> |
+<%= link_to "Add a restaurant", new_restaurant_path(@restaurant) %>
+</p>
+
+<h3>Write a review</h3>
+<%= simple_form_for [@restaurant, @review] do |f|%>
+<%= f.input :content %>
+<%= f.input :rating %>
+<%= f.submit "Add a review", class: "btn btn-primary" %>
+<% end %>
+
+
+
+</div>
