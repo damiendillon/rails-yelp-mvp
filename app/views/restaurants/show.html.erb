@@ -8,12 +8,16 @@
     <%= @restaurant.category.capitalize %> <br>
     <%= @restaurant.phone_number %> <br>
     <br>
-    <div id="review_box">
+    <div>
+
       <h3>Reviews</h3>
+      <ul>
       <% @restaurant.reviews.each do |r| %> <br>
       <%= r.content %> <br>
       <%= r.rating %> <br>
       <% end %>
+      </ul>
+
     </div>
     <br>
     <br>
@@ -27,7 +31,5 @@
   <%= f.input :rating %>
   <%= f.submit "Add a review", class: "btn btn-primary" %>
   <% end %>
-
-
 
 </div>

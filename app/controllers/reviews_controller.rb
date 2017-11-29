@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
       #sends it back to the form
-      render :new
+      # render :new
+      render "restuarants/show"
     end
   end
 
@@ -21,6 +22,7 @@ class ReviewsController < ApplicationController
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+    # check path of :restaurant_id in the rails routes
   end
 
   def review_params
